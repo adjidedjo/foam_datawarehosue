@@ -5,7 +5,9 @@ class Penjualan::Nasional::RecapsController < ApplicationController
 
   def recap
     @branch = "NASIONAL"
-    @monthnas_summary = NasionalSales.retail_nasional_this_month_total
+    @summary = NasionalSales.total_revenue_foam
+    @monthnas_summary = NasionalSales.foam_nasional_this_month_total
+    @foam_naschannel = NasionalSales.foam_nasional_channel_total
     @bybrand = NasionalSales.recap_bysubbrand
     @customer = NasionalSales.customer_monthly
     render template: "penjualan/nasional/recap"

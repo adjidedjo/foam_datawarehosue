@@ -10,9 +10,44 @@
 
         //
         // Zero configuration
-        //        
-
+        //      
+        
         $('#nasional_bybrand').dataTable({
+            'paging' : true, // Table pagination
+            'ordering' : true, // Column ordering
+            'info' : false, // Bottom left status text
+            'responsive' : true, // https://datatables.net/extensions/responsive/examples/
+            'filter' : true,
+            // Text translation options
+            // Note the required keywords between underscores (e.g _MENU_)
+            oLanguage : {
+                sSearch : 'Search:',
+                sLengthMenu : '_MENU_ records per page',
+                info : 'Showing page _PAGE_ of _PAGES_',
+                zeroRecords : 'Nothing found - sorry',
+                infoEmpty : 'No records available',
+                infoFiltered : '(filtered from _MAX_ total records)'
+            },
+            // Datatable Buttons setup
+            dom : '<"html5buttons"B>frtip',
+            buttons : [{
+                extend : 'csv',
+                className : 'btn-sm'
+            }, {
+                extend : 'excel',
+                className : 'btn-sm',
+                title : 'XLS-File'
+            }, {
+                extend : 'pdf',
+                className : 'btn-sm',
+                title : $('title').text()
+            }, {
+                extend : 'print',
+                className : 'btn-sm'
+            }]
+        });  
+
+        $('#nasional_bysubbrand').dataTable({
             'paging' : true, // Table pagination
             'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
