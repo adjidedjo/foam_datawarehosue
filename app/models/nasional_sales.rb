@@ -15,13 +15,13 @@ class NasionalSales < ActiveRecord::Base
     ")
   end
 
-  def self.recap_bybrand
+  def self.recap_bysubbrand
     find_by_sql("SELECT subbrand,
       SUM(CASE WHEN dmonth = '#{3.months.ago.month}' AND dyear = '#{3.months.ago.year}' THEN total_sales END) month3,
       SUM(CASE WHEN dmonth = '#{2.months.ago.month}' AND dyear = '#{2.months.ago.year}' THEN total_sales END) month2,
       SUM(CASE WHEN dmonth = '#{1.months.ago.month}' AND dyear = '#{1.months.ago.year}' THEN total_sales END) month1,
       SUM(CASE WHEN dmonth = '#{Date.today.month}' AND dyear = '#{Date.today.year}' THEN total_sales END) monthnow
-      FROM foam_datawarehouse.foam_bybrands WHERE tanggalsj BETWEEN '#{3.months.ago.to_date}' AND '#{Date.today.to_date}'
+      FROM foam_datawarehouse.foam_bysubbrands WHERE tanggalsj BETWEEN '#{3.months.ago.to_date}' AND '#{Date.today.to_date}'
       GROUP BY subbrand
     ")
   end
