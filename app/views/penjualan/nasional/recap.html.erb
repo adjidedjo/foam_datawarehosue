@@ -89,24 +89,20 @@
               <thead>
                 <tr>
                   <th>Customer</th>
-                  <th>Kota</th>
                   <th>Salesman</th>
                   <th><%= Date.today.strftime("%B") %></th>
                   <th><%= 1.months.ago.strftime("%B") %></th>
                   <th><%= 2.months.ago.strftime("%B") %></th>
-                  <th><%= 3.months.ago.strftime("%B") %></th>
                 </tr>
               </thead>
               <tbody>
                 <% @customer.each do |cus| %>
                 <tr class="gradeX">
                   <td><%= cus.customer_desc %></td>
-                  <td><%= cus.kota %></td>
                   <td><%= cus.salesman %></td>
                   <td><%= cus.monthnow.nil? ? 0 : currency(cus.monthnow) %></td>
                   <td><%= cus.month1.nil? ? 0 : currency(cus.month1) %></td>
                   <td><%= cus.month2.nil? ? 0 : currency(cus.month2) %></td>
-                  <td><%= cus.month3.nil? ? 0 : currency(cus.month3) %></td>
                 </tr>
                 <% end %>
               </tbody>
