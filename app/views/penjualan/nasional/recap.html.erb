@@ -123,8 +123,8 @@
                 <tr>
                   <th>Sub-Brand</th>
                   <th><%= 6.days.ago.to_date.strftime("%B") %></th>
-                  <th><%= 1.months.ago.strftime("%B") %></th>
-                  <th><%= 2.months.ago.strftime("%B") %></th>
+                  <th><%= (6.days.ago.to_date - 1.month).to_date.strftime("%B") %></th>
+                  <th><%= (6.days.ago.to_date - 2.month).to_date.strftime("%B") %></th>
                 </tr>
               </thead>
               <tbody>
@@ -158,9 +158,9 @@
                 <tr>
                   <th>Customer</th>
                   <th>Salesman</th>
-                  <th><%= Date.today.strftime("%B") %></th>
-                  <th><%= 1.months.ago.strftime("%B") %></th>
-                  <th><%= 2.months.ago.strftime("%B") %></th>
+                  <th><%= 6.days.ago.to_date.strftime("%B") %></th>
+                  <th><%= (6.days.ago.to_date - 1.month).to_date.strftime("%B") %></th>
+                  <th><%= (6.days.ago.to_date - 2.month).to_date.strftime("%B") %></th>
                 </tr>
               </thead>
               <tbody>
