@@ -17,8 +17,8 @@
               <thead>
                 <tr>
                   <th>Total</th>
-                  <th><%= Date.today.strftime('%b %y') %></th>
-                  <th><%= (Date.today - 1.month).strftime('%b %y') %></th>
+                  <th><%= 6.days.ago.to_date.strftime('%b %y') %></th>
+                  <th><%= (6.days.ago.to_date - 1.month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -52,8 +52,8 @@
               <thead>
                 <tr>
                   <th>Brand</th>
-                  <th><%= Date.today.strftime('%b %y') %></th>
-                  <th><%= (Date.today - 1.month).strftime('%b %y') %></th>
+                  <th><%= 6.days.ago.to_date.strftime('%b %y') %></th>
+                  <th><%= (6.days.ago.to_date - 1.month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -87,8 +87,8 @@
               <thead>
                 <tr>
                   <th>Channel</th>
-                  <th><%= Date.today.strftime('%b %y') %></th>
-                  <th><%= (Date.today - 1.month).strftime('%b %y') %></th>
+                  <th><%= 6.days.ago.to_date.strftime('%b %y') %></th>
+                  <th><%= (6.days.ago.to_date - 1.month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -122,7 +122,7 @@
               <thead>
                 <tr>
                   <th>Sub-Brand</th>
-                  <th><%= Date.today.strftime("%B") %></th>
+                  <th><%= 6.days.ago.to_date.strftime("%B") %></th>
                   <th><%= 1.months.ago.strftime("%B") %></th>
                   <th><%= 2.months.ago.strftime("%B") %></th>
                 </tr>
