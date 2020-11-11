@@ -1,15 +1,15 @@
 class Penjualan::Nasional::RecapsController < ApplicationController
   include RolesHelper
-  #before_action :authorize_bm, :checking_params
+  before_action :checking_params
   #before_action :authorize_bm, only: :recap
 
   def recap
     @branch = "NASIONAL"
-    @summary = NasionalSales.total_revenue_foam
-    @monthnas_summary = NasionalSales.foam_nasional_this_month_total
-    @foam_naschannel = NasionalSales.foam_nasional_channel_total
-    @bybrand = NasionalSales.recap_bysubbrand
-    @customer = NasionalSales.customer_monthly
+    @summary = NasionalSales.total_revenue_foam(@date)
+    @monthnas_summary = NasionalSales.foam_nasional_this_month_total(@date)
+    @foam_naschannel = NasionalSales.foam_nasional_channel_total(@date)
+    @bybrand = NasionalSales.recap_bysubbrand(@date)
+    @customer = NasionalSales.customer_monthly(@date)
     render template: "penjualan/nasional/recap"
   end
   
