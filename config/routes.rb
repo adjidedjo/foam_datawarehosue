@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # view routes
   get 'penjualan/nasional/recaps/recap'
+  get 'penjualan/industri/industries/recap'
+  get 'penjualan/retail/retails/recap'
 
   get '/widgets' => 'widgets#index'
   get '/documentation' => 'documentation#index'
