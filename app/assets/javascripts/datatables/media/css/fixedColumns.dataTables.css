@@ -1,0 +1,29 @@
+table.DTFC_Cloned thead,
+table.DTFC_Cloned tfoot {
+  background-color: white;
+}
+
+div.DTFC_Blocker {
+  background-color: white;
+}
+
+div.DTFC_LeftWrapper table.dataTable,
+div.DTFC_RightWrapper table.dataTable {
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.DTFC_LeftBodyWrapper, .DTFC_RightBodyWrapper {
+    -webkit-box-shadow: 0px 0px 6px 0px black;
+    -moz-box-shadow: 0px 0px 6px 0px black;
+    box-shadow: 0px 0px 6px 0px black;
+}
+
+div.DTFC_LeftWrapper table.dataTable.no-footer,
+div.DTFC_RightWrapper table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+table.dataTable.display tbody tr.DTFC_NoData {
+  background-color: transparent;
+}

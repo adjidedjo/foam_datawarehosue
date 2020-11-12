@@ -9,6 +9,7 @@
 //= require datatables/media/js/jquery.dataTables.min
 //= require datatables-colvis/js/dataTables.colVis
 //= require datatables/media/js/dataTables.bootstrap
+//= require datatables/media/js/dataTables.fixedColumns.min
 //= require jszip/jszip.min.js
 //= require pdfmake/pdfmake.min.js
 

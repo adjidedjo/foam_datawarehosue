@@ -467,7 +467,6 @@
 
         $('#table-revenue-products').dataTable({
             'paging' : true, // Table pagination
-            'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
             'responsive' : false, // https://datatables.net/extensions/responsive/examples/
             'filter' : true,
