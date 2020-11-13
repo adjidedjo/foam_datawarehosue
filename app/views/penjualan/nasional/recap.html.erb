@@ -170,15 +170,15 @@
             Sales Report by Customer <b>INDUSTRI</b>
           </div>
           <div class="panel-body">
-            <table id="table-revenue-products" class="table table-striped table-bordered nowrap aww" style="width:100%">
+            <table id="table-revenue-products" class="table table-striped table-bordered nowrap" style="width:100%">
               <thead>
               	<tr>
                   <th rowspan="2">Channel</th>
                   <th rowspan="2">Salesman</th>
                   <th rowspan="2">Customer</th>
-                  <th colspan="2"><%= (@date.to_date - 6).strftime("%b") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 6) - 30).to_date.strftime("%b") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 6) - 60).to_date.strftime("%b") %></th>
+                  <th colspan="2"><%= (@date.to_date - 6).strftime("%B") %></th>
+                  <th colspan="2"><%= ((@date.to_date - 6) - 30).to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= ((@date.to_date - 6) - 60).to_date.strftime("%B") %></th>
               	</tr>
                 <tr>
                   <th>IDR</th>
