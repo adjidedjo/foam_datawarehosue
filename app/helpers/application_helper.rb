@@ -64,6 +64,10 @@ end
     number_to_currency(price, :precision => 0, :unit => "", :delimiter => ",")
   end
   
+  def currency_idr(price)
+    number_with_delimiter(price, delimiter: ".")
+  end
+  
   def precision(avg)
     number_with_precision(avg, precision: 2)
   end
