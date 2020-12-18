@@ -30,7 +30,7 @@
                 	}
             	}
         	},
-            columns : [null, null, null, {
+            columns : [null, null, null, null, {
                 type : 'num-fmt'
             }, {
                 type : 'num-fmt'

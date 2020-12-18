@@ -140,6 +140,7 @@
               	<tr>
                   <th rowspan="2">Channel</th>
                   <th rowspan="2">Salesman</th>
+                  <th rowspan="2">Kode</th>
                   <th rowspan="2">Customer</th>
                   <th colspan="2"><%= (@date.to_date - 6).strftime("%B") %></th>
                   <th colspan="2"><%= ((@date.to_date - 6) - 30).to_date.strftime("%B") %></th>
@@ -159,6 +160,7 @@
                 <tr>
                   <td><%= cus.channel %></td>
                   <td><%= cus.salesman %></td>
+                  <td><%= cus.customer_id %></td>
                   <td><%= cus.customer_desc %></td>
                   <td><%= cus.monthnow.nil? ? 0 : currency(cus.monthnow) %></td>
                   <td><%= cus.monthnow.nil? ? 0 : currency(cus.monthnow_usd) %></td>
@@ -189,6 +191,7 @@
               <thead>
               	<tr>
                   <th rowspan="2">Salesman</th>
+                  <th rowspan="2">Kode</th>
                   <th rowspan="2">Customer</th>
                   <th rowspan="2">Sub-Brand</th>
                   <th colspan="2"><%= (@date.to_date - 6).strftime("%B") %></th>
@@ -208,6 +211,7 @@
                 <% @customer_subbrand.each do |cus| %>
                 <tr>
                   <td><%= cus.salesman %></td>
+                  <td><%= cus.customer_id %></td>
                   <td><%= cus.customer_desc %></td>
                   <td><%= cus.subbrand %></td>
                   <td><%= cus.monthnow.nil? ? 0 : currency(cus.monthnow) %></td>

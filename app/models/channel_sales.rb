@@ -55,7 +55,7 @@ class ChannelSales < ActiveRecord::Base
   end
 
   def self.customer_channel_monthly(date, channel)
-    find_by_sql("SELECT channel, customer_desc, salesman, kota,
+    find_by_sql("SELECT channel, customer_id, customer_desc, salesman, kota,
       SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
       SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales_usd END) month2_usd,
       SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
@@ -68,7 +68,7 @@ class ChannelSales < ActiveRecord::Base
   end
 
   def self.customer_channel_subbrand_monthly(date, channel)
-    find_by_sql("SELECT channel, customer_desc, salesman, subbrand,
+    find_by_sql("SELECT channel, customer_id, customer_desc, salesman, subbrand,
       SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
       SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales_usd END) month2_usd,
       SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
