@@ -13,7 +13,7 @@
       <%= select_month(params[:date].present? ? params[:date][:month].to_i : Date.today.month, {prompt: 'Choose month'}, class: "form-control") %>
     </div>
     <div class="form-group">
-      <%= select_year(Date.today, {start_year: 2017, end_year: Date.today.year, prompt: 'Choose year'}, {class: "form-control"}) %>
+      <%= select_year(params[:date].present? ? params[:date][:year].to_i : Date.today.year, {start_year: 2020, end_year: Date.today.year, prompt: 'Choose year'}, {class: "form-control"}) %>
     </div>
     <%= submit_tag 'Search', name: nil, class: "btn btn-info" %>
     <% end %>
@@ -34,8 +34,8 @@
               <thead>
                 <tr>
                   <th>Total</th>
-                  <th><%= (@date.to_date - 6).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th><%= ((@date.to_date - 6) - 30).strftime('%b %y') %></th>
+                  <th><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
+                  <th><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -69,8 +69,8 @@
               <thead>
                 <tr>
                   <th>Brand</th>
-                  <th><%= (@date.to_date - 6).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th><%= ((@date.to_date - 6) - 30).strftime('%b %y') %></th>
+                  <th><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
+                  <th><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -104,8 +104,8 @@
               <thead>
                 <tr>
                   <th>Channel</th>
-                  <th><%= (@date.to_date - 6).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th><%= ((@date.to_date - 6) - 30).strftime('%b %y') %></th>
+                  <th><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
+                  <th><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
                   <th>Change</th>
                 </tr>
               </thead>
@@ -139,9 +139,9 @@
               <thead>
                 <tr>
                   <th>Sub-Brand</th>
-                  <th><%= (@date.to_date - 6).strftime("%B") %></th>
-                  <th><%= ((@date.to_date - 6) - 30).to_date.strftime("%B") %></th>
-                  <th><%= ((@date.to_date - 6) - 60).to_date.strftime("%B") %></th>
+                  <th><%= (@date.to_date - 5).strftime("%B") %></th>
+                  <th><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
+                  <th><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
                 </tr>
               </thead>
               <tbody>
@@ -177,9 +177,9 @@
                   <th rowspan="2">Salesman</th>
                   <th rowspan="2">Kode</th>
                   <th rowspan="2">Customer</th>
-                  <th colspan="2"><%= (@date.to_date - 6).strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 6) - 30).to_date.strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 6) - 60).to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= (@date.to_date - 5).strftime("%B") %></th>
+                  <th colspan="2"><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
               	</tr>
                 <tr>
                   <th>IDR</th>
@@ -225,7 +225,7 @@
       <%= select_month(params[:date].present? ? params[:date][:month].to_i : Date.today.month, {prompt: 'Choose month'}, class: "form-control") %>
     </div>
     <div class="form-group">
-      <%= select_year(Date.today, {start_year: 2017, end_year: Date.today.year, prompt: 'Choose year'}, {class: "form-control"}) %>
+      <%= select_year(params[:date].present? ? params[:date][:year].to_i : Date.today.year, {start_year: 2017, end_year: Date.today.year, prompt: 'Choose year'}, {class: "form-control"}) %>
     </div>
     <%= submit_tag 'Search', name: nil, class: "btn btn-info" %>
     <% end %>
