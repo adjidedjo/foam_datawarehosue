@@ -2,7 +2,8 @@ class WhsSale < ActiveRecord::Base
   self.table_name = "WHS1BRAND"
   include ParamdatesConcern
   def self.total_revenue_channel_whs(date, channel)
-    self.find_by_sql("SELECT a.month1, a.monthnow, ROUND((((a.monthnow - a.month1) / a.month1) * 100), 0) AS percentage FROM
+    self.find_by_sql("SELECT a.month1, a.monthnow, 
+    ROUND((((a.monthnow - a.month1) / a.month1) * 100), 0) AS percentage FROM
       (
         SELECT 'Total',
         SUM(CASE WHEN fiscal_month = '5' AND fiscal_year = '2021' THEN sales_amount END) month2,
@@ -17,10 +18,9 @@ class WhsSale < ActiveRecord::Base
     self.find_by_sql("SELECT lc.val_1, lc.val_2, lc.brand,
       ROUND((((lc.val_1 - lc.val_2) / lc.val_2) * 100), 0) AS percentage FROM
       (
-        SELECT area_desc AS areas, brand AS brand,
-        SUM(CASE WHEN fiscal_month = '5' AND fiscal_year = '2021' THEN sales_amount END) month2,
-        SUM(CASE WHEN fiscal_month = '6' AND fiscal_year = '2021' THEN sales_amount END) month1,
-        SUM(CASE WHEN fiscal_month = '7' AND fiscal_year = '2021' THEN sales_amount END) monthnow
+        SELECT brand AS brand,
+        SUM(CASE WHEN fiscal_month = '6' AND fiscal_year = '2021' THEN sales_amount END) val_2,
+        SUM(CASE WHEN fiscal_month = '7' AND fiscal_year = '2021' THEN sales_amount END) val_1
         FROM foam_datawarehouse.WHS1BRAND WHERE fiscal_month BETWEEN '5' AND '7' AND fiscal_year BETWEEN '2021' AND '2021'
         GROUP BY brand
       ) AS lc
