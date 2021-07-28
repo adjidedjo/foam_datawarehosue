@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'penjualan/nasional/recaps/recap'
   get 'penjualan/industri/industries/recap'
   get 'penjualan/retail/retails/recap'
+  get 'penjualan/wholesale/wholesales/recap'
 
   get '/widgets' => 'widgets#index'
   get '/documentation' => 'documentation#index'
