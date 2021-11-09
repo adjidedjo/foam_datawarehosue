@@ -93,9 +93,9 @@
                 <tr class="gradeX">
                   <td><%= dp.brand %></td>
                   <td><%= currency(dp.val_1) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasi1) %></td>
                   <td><%= currency(dp.val_2) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasi2) %></td>
                   <td class="<%= coloring(dp.percentage) %>"><%= dp.percentage.nil? ? 0 : cpercent(dp.percentage.abs) %></td>
                 </tr>
                 <% end %>
@@ -136,9 +136,9 @@
                 <tr class="gradeX">
                   <td><%= dp.channel %></td>
                   <td><%= currency(dp.val_1) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasi1) %></td>
                   <td><%= currency(dp.val_2) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasi2) %></td>
                   <td class="<%= coloring(dp.percentage) %>"><%= dp.percentage.nil? ? 0 : cpercent(dp.percentage.abs) %></td>
                 </tr>
                 <% end %>
@@ -181,11 +181,11 @@
                 <tr class="gradeX">
                   <th><%= bb.subbrand %></th>
                   <td><%= bb.monthnow.nil? ? 0 : currency(bb.monthnow) %></td>
-                  <td>0</td>
+                  <td><%= bb.kubikasinow.nil? ? 0 : currency(bb.kubikasinow) %></td>
                   <td><%= bb.month1.nil? ? 0 : currency(bb.month1) %></td>
-                  <td>0</td>
+                  <td><%= bb.kubikasi1.nil? ? 0 : currency(bb.kubikasi1) %></td>
                   <td><%= bb.month2.nil? ? 0 : currency(bb.month2) %></td>
-                  <td>0</td>
+                  <td><%= bb.kubikasi2.nil? ? 0 : currency(bb.kubikasi2) %></td>
                 </tr>
                 <% end %>
               </tbody>
