@@ -50,9 +50,9 @@
                 <tr class="gradeX">
                   <td>Total</td>
                   <td><%= currency(dp.monthnow) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasinow) %></td>
                   <td><%= currency(dp.month1) %></td>
-                  <td>0</td>
+                  <td><%= currency(dp.kubikasi1) %></td>
                   <td class="<%= coloring(dp.percentage) %>"><%= dp.percentage.nil? ? 0 : cpercent(dp.percentage.abs) %></td>
                 </tr>
                 <% end %>
