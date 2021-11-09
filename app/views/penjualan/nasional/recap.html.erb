@@ -212,9 +212,9 @@
                   <th rowspan="2">Salesman</th>
                   <th rowspan="2">Kode</th>
                   <th rowspan="2">Customer</th>
-                  <th colspan="2"><%= (@date.to_date - 5).strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
+                  <th colspan="3"><%= (@date.to_date - 5).strftime("%B") %></th>
+                  <th colspan="3"><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
+                  <th colspan="3"><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
               	</tr>
                 <tr>
                   <th>IDR</th>
