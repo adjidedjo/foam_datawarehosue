@@ -33,7 +33,7 @@
             <table id="datatable1" class="table table-striped table-bordered nowrap">
               <thead>
                 <tr>
-                  <th rowspan="2">Total</th>
+                  <th rowspan="2">Company</th>
                   <th colspan="2"><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
                   <th colspan="2"><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
                   <th colspan="2">Change</th>
@@ -48,7 +48,7 @@
               <tbody>
                 <% @summary.each do |dp| %>
                 <tr class="gradeX">
-                  <td>Total</td>
+                  <td><%= dp.area_desc %></td>
                   <td><%= currency(dp.monthnow) %></td>
                   <td><%= currency(dp.kubikasinow) %></td>
                   <td><%= currency(dp.month1) %></td>
