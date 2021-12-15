@@ -2,18 +2,16 @@ class ChannelSales < ActiveRecord::Base
   self.table_name = "sales_warehouses"
   include ParamdatesConcern
   def self.total_revenue_channel_foam(date, channel)
-    self.find_by_sql("SELECT lc.monthnow, lc.month1, lc.kubikasinow, lc.kubikasi1, lc.kubikasi2,
+    self.find_by_sql("SELECT lc.area_id, lc.area_desc, lc.monthnow, lc.month1, lc.kubikasinow, lc.kubikasi1,
       ROUND((((lc.monthnow - lc.month1) / lc.month1) * 100), 0) AS percentage FROM
       (
-        SELECT 'total',
-        SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
-        SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN kubikasi END) kubikasi2,
+        SELECT 'total', area_id, area_desc,
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN kubikasi END) kubikasi1,
         SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN total_sales END) monthnow,
         SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN kubikasi END) kubikasinow
-        FROM foam_datawarehouse.foam_bybrands WHERE tanggalsj BETWEEN '#{two_months_date(date)}'
-        AND '#{this_month_date(date)}' AND channel = '#{channel}'
+        FROM foam_datawarehouse.foam_bybrands WHERE tanggalsj BETWEEN '#{last_month_date(date)}'
+        AND '#{this_month_date(date)}' AND channel = '#{channel}' GROUP BY area_id
       ) AS lc
     ")
   end

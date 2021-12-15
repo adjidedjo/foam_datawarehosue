@@ -48,7 +48,7 @@
               <tbody>
                 <% @summary.each do |dp| %>
                 <tr class="gradeX">
-                  <td>Total</td>
+                  <td><%= dp.area_desc %></td>
                   <td><%= currency(dp.monthnow) %></td>
                   <td><%= currency(dp.kubikasinow) %></td>
                   <td><%= currency(dp.month1) %></td>

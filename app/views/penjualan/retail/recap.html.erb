@@ -42,7 +42,7 @@
               <tbody>
                 <% @summary.each do |dp| %>
                 <tr class="gradeX">
-                  <td>Total</td>
+                  <td><%= dp.area_desc %></td>
                   <td><%= currency(dp.monthnow) %></td>
                   <td><%= currency(dp.month1) %></td>
                   <td class="<%= coloring(dp.percentage) %>"><%= dp.percentage.nil? ? 0 : cpercent(dp.percentage.abs) %></td>
