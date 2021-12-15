@@ -10,7 +10,7 @@ class NasionalSales < ActiveRecord::Base
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN kubikasi END) kubikasi1,
         SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN total_sales END) monthnow,
         SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN kubikasi END) kubikasinow
-        FROM foam_datawarehouse.foam_bybrands WHERE tanggalsj BETWEEN '#{two_months_date(date)}'
+        FROM foam_datawarehouse.foam_bybrands WHERE tanggalsj BETWEEN '#{last_month_date(date)}'
         AND '#{this_month_date(date)}' GROUP BY area_id
       ) AS lc
     ")
