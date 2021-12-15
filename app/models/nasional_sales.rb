@@ -6,8 +6,6 @@ class NasionalSales < ActiveRecord::Base
       ROUND((((lc.monthnow - lc.month1) / lc.month1) * 100), 0) AS percentage, kubikasi2, kubikasi1, kubikasinow FROM
       (
         SELECT 'total', area_id, area_desc,
-        SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
-        SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN kubikasi END) kubikasi2,
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN kubikasi END) kubikasi1,
         SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN total_sales END) monthnow,
