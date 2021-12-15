@@ -3,7 +3,7 @@ class NasionalSales < ActiveRecord::Base
   include ParamdatesConcern
   def self.total_revenue_foam(date)
     self.find_by_sql("SELECT lc.area_id, lc.area_desc, lc.monthnow, lc.month1,
-      ROUND((((lc.monthnow - lc.month1) / lc.month1) * 100), 0) AS percentage, kubikasi2, kubikasi1, kubikasinow FROM
+      ROUND((((lc.monthnow - lc.month1) / lc.month1) * 100), 0) AS percentage, kubikasi1, kubikasinow FROM
       (
         SELECT 'total', area_id, area_desc,
         SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
