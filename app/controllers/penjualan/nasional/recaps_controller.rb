@@ -10,6 +10,7 @@ class Penjualan::Nasional::RecapsController < ApplicationController
     @foam_naschannel = NasionalSales.foam_nasional_channel_total(@date)
     @bybrand = NasionalSales.recap_bysubbrand(@date)
     @customer = NasionalSales.customer_monthly(@date)
+    @products = NasionalSales.product_monthly(@date)
     render template: "penjualan/nasional/recap"
   end
   

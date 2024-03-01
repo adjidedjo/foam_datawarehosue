@@ -1,6 +1,18 @@
 class NasionalSales < ActiveRecord::Base
   self.table_name = "sales_warehouses"
   include ParamdatesConcern
+
+  def self.product_monthly(date)
+    find_by_sql("SELECT branch, brand, article, article_desc, sales_quantity, area,
+      SUM(CASE WHEN fiscal_month = '#{two_months_month(date)}' AND fiscal_year = '#{two_months_year(date)}' THEN sales_quantity END) month2,
+      SUM(CASE WHEN fiscal_month = '#{last_month_month(date)}' AND fiscal_year = '#{last_month_year(date)}' THEN sales_quantity END) month1,
+      SUM(CASE WHEN fiscal_month = '#{this_month_month(date)}' AND fiscal_year = '#{this_month_year(date)}' THEN sales_quantity END) monthnow
+      FROM foam_datawarehouse.WHS3SALARTICLE WHERE fiscal_year between '#{two_months_year(date)}' and '#{this_month_year(date)}' and fiscal_month
+      between '#{this_month_month(date)}' and '#{two_months_month(date)}'
+      GROUP BY branch, article
+    ")
+  end
+
   def self.total_revenue_foam(date)
     self.find_by_sql("SELECT lc.area_id, lc.area_desc, lc.monthnow, lc.month1,
       ROUND((((lc.monthnow - lc.month1) / lc.month1) * 100), 0) AS percentage, kubikasi1, kubikasinow FROM
