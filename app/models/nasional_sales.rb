@@ -8,7 +8,7 @@ class NasionalSales < ActiveRecord::Base
       SUM(CASE WHEN fiscal_month = '#{last_month_month(date)}' AND fiscal_year = '#{last_month_year(date)}' THEN sales_quantity END) month1,
       SUM(CASE WHEN fiscal_month = '#{this_month_month(date)}' AND fiscal_year = '#{this_month_year(date)}' THEN sales_quantity END) monthnow
       FROM foam_datawarehouse.WHS3SALARTICLE WHERE fiscal_year between '#{two_months_year(date)}' and '#{this_month_year(date)}' and fiscal_month
-      between '#{this_month_month(date)}' and '#{two_months_month(date)}'
+      between '#{two_months_month(date)}' and '#{this_month_month(date)}'
       GROUP BY branch, article
     ")
   end
