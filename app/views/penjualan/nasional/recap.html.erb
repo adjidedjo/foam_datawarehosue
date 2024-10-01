@@ -32,8 +32,8 @@
               <thead>
                 <tr>
                   <th rowspan="2">Company</th>
-                  <th colspan="2"><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
+                  <th colspan="2"><%= @date.to_date.end_of_month.to_date.strftime('%B %y') %></th>
+                  <th colspan="2"><%= (@date.to_date.last_month).strftime('%B %y') %></th>
                   <th colspan="2">Change</th>
                 </tr>
                 <tr>
@@ -75,8 +75,8 @@
               <thead>
                 <tr>
                   <th rowspan="2">Brand</th>
-                  <th colspan="2"><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
+                  <th colspan="2"><%= @date.to_date.end_of_month.to_date.strftime('%b %y') %></th>
+                  <th colspan="2"><%= (@date.to_date.last_month).strftime('%b %y') %></th>
                   <th rowspan="2">Change</th>
                 </tr>
                 <tr>
@@ -118,8 +118,8 @@
               <thead>
                 <tr>
                   <th rowspan="2">Channel</th>
-                  <th colspan="2"><%= (@date.to_date - 5).end_of_month.to_date.strftime('%b %y') %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month).strftime('%b %y') %></th>
+                  <th colspan="2"><%= @date.to_date.end_of_month.to_date.strftime('%b %y') %></th>
+                  <th colspan="2"><%= (@date.to_date.last_month).strftime('%b %y') %></th>
                   <th rowspan="2">Change</th>
                 </tr>
                 <tr>
@@ -161,9 +161,9 @@
               <thead>
                 <tr>
                   <th rowspan="2">Sub-Brand</th>
-                  <th colspan="2"><%= (@date.to_date - 5).strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
-                  <th colspan="2"><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= @date.to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= (@date.to_date.last_month).to_date.strftime("%B") %></th>
+                  <th colspan="2"><%= (@date.to_date.last_month.last_month).to_date.strftime("%B") %></th>
                 </tr>
                 <tr>
                   <th>IDR</th>
@@ -210,9 +210,9 @@
                   <th rowspan="2">Salesman</th>
                   <th rowspan="2">Kode</th>
                   <th rowspan="2">Customer</th>
-                  <th colspan="3"><%= (@date.to_date - 5).strftime("%B") %></th>
-                  <th colspan="3"><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
-                  <th colspan="3"><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
+                  <th colspan="3"><%= @date.to_date.strftime("%B") %></th>
+                  <th colspan="3"><%= (@date.to_date.last_month).to_date.strftime("%B") %></th>
+                  <th colspan="3"><%= (@date.to_date.last_month.last_month).to_date.strftime("%B") %></th>
                 </tr>
                 <tr>
                   <th>IDR</th>
@@ -266,9 +266,9 @@
                 <tr>
                   <th rowspan="2">Channel</th>
                   <th rowspan="2">Product</th>
-                  <th><%= (@date.to_date - 5).strftime("%B") %></th>
-                  <th><%= ((@date.to_date - 5).last_month).to_date.strftime("%B") %></th>
-                  <th><%= ((@date.to_date - 5).last_month.last_month).to_date.strftime("%B") %></th>
+                  <th><%= @date.to_date.strftime("%B") %></th>
+                  <th><%= (@date.to_date.last_month).to_date.strftime("%B") %></th>
+                  <th><%= (@date.to_date.last_month.last_month).to_date.strftime("%B") %></th>
                 </tr>
                 <tr>
                   <th>Qty</th>
