@@ -9,6 +9,7 @@ class Penjualan::Retail::RetailsController < ApplicationController
     @monthnas_summary = ChannelSales.foam_channel_this_month_total(@date, channel)
     @foam_naschannel = ChannelSales.foam_channel_total(@date, channel)
     @bybrand = ChannelSales.recap_bysubbrand_channel(@date, channel)
+    @quality = ChannelSales.quality_channel_monthly(@date, channel)
     @customer = ChannelSales.customer_channel_monthly(@date, channel)
     render template: "penjualan/retail/recap"
   end
