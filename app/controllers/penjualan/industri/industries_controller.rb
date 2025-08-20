@@ -10,6 +10,7 @@ class Penjualan::Industri::IndustriesController < ApplicationController
     @foam_naschannel = ChannelSales.foam_channel_total(@date, channel)
     @bybrand = ChannelSales.recap_bysubbrand_channel(@date, channel)
     @customer = ChannelSales.customer_channel_monthly(@date, channel)
+    @quality = ChannelSales.quality_channel_monthly(@date, channel)
     @customer_subbrand = ChannelSales.customer_channel_subbrand_monthly(@date, channel)
     render template: "penjualan/industri/recap"
   end

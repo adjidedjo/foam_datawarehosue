@@ -70,6 +70,19 @@ class NasionalSales < ActiveRecord::Base
     ")
   end
 
+  def self.recap_byquality(date)
+    find_by_sql("SELECT densityid, densitydesc, area_desc, subbrand,
+      SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
+      SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN kubikasi END) kubikasi2,
+      SUM(CASE WHEN dmonth = '#{last_month_month(date)}' AND dyear = '#{last_month_year(date)}' THEN total_sales END) month1,
+      SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN kubikasi END) kubikasi1,
+      SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN total_sales END) monthnow,
+      SUM(CASE WHEN dmonth = '#{this_month_month(date)}' AND dyear = '#{this_month_year(date)}' THEN kubikasi END) kubikasinow
+      FROM foam_datawarehouse.foam_byquality WHERE tanggalsj BETWEEN '#{two_months_date(date)}' AND '#{this_month_date(date)}'
+      GROUP BY densityid, area_id, subbrand
+    ")
+  end
+
   def self.customer_monthly(date)
     find_by_sql("SELECT channel, customer_id, customer_desc, salesman, kota,
       SUM(CASE WHEN dmonth = '#{two_months_month(date)}' AND dyear = '#{two_months_year(date)}' THEN total_sales END) month2,
