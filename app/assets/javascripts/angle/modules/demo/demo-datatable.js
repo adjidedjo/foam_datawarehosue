@@ -16,7 +16,8 @@
             'paging' : true, // Table pagination
             'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
-            'responsive' : true, // https://datatables.net/extensions/responsive/examples/
+            'responsive' : false, // https://datatables.net/extensions/responsive/examples/
+            'scrollX': true,
             'filter' : true,
             // Text translation options
             // Note the required keywords between underscores (e.g _MENU_)
@@ -86,7 +87,8 @@
             'paging' : true, // Table pagination
             'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
-            'responsive' : true, // https://datatables.net/extensions/responsive/examples/
+            'responsive' : false, // https://datatables.net/extensions/responsive/examples/
+            'scrollX': true,
             'filter' : true,
             // Text translation options
             // Note the required keywords between underscores (e.g _MENU_)
@@ -150,7 +152,8 @@
             'paging' : true, // Table pagination
             'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
-            'responsive' : true, // https://datatables.net/extensions/responsive/examples/
+            'responsive' : false, // https://datatables.net/extensions/responsive/examples/
+            'scrollX': true,
             'filter' : true,
             // Text translation options
             // Note the required keywords between underscores (e.g _MENU_)
@@ -185,7 +188,8 @@
             'paging' : true, // Table pagination
             'ordering' : true, // Column ordering
             'info' : false, // Bottom left status text
-            'responsive' : true, // https://datatables.net/extensions/responsive/examples/
+            'responsive' : false, // https://datatables.net/extensions/responsive/examples/
+            'scrollX': true,
             'filter' : true,
             // Text translation options
             // Note the required keywords between underscores (e.g _MENU_)
